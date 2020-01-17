@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <title>1DIOT - Page not found!</title>
+ </head>
+
+<body>
+    <div class="container">
+    <span class="text">404</span>
+    <br>
+    <span class="info">This page doesn't exist!</span>
+    </div>
+</body>
+
+<style>
+
+body {
+    background-color: rgb(48, 48, 48);
+  
+}
+
+.container {
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+
+.text {
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 12rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: verdana;
+  font-size: 2rem;
+  color: #f5f5f5;
+}
+
+@media (min-width: 858px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 780px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 702px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 724px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 623px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 1000px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+</style>
+
+<script>
+
+var siteWidth = 1280;
+var scale = screen.width /siteWidth
+
+document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+
+</script>
