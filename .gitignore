@@ -1,2 +1,4 @@
 /1diot-frontend/dist/**
-1diot-frontend/node_modules/**
+/1diot-frontend/dist/*
+/1diot-frontend/node_modules/**
+/1diot-frontend/node_modules/*
