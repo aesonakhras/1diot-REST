@@ -1,5 +1,6 @@
 <template>
 <div>
+  <p>Build 2.10.2020</p>
   <div class="logoContainer">
   <div>
       <h1 class="animated jackInTheBox">1DIOT</h1>
@@ -140,7 +141,9 @@ export default {
       code: '',
       username: '',
       selected: false,
-      type: null
+      type: null,
+      validCode: false,
+      validName: false
     }
   },
   methods: {
@@ -167,6 +170,26 @@ export default {
     },
     addName() {
       this.username.push({username: this.username})
+    },
+    validateCode(newInput, oldInput){
+      var regex = new RegExp('[^0-9a-zA-Z]')
+      this.validCode = (!regex.test(newInput))
+
+      if(!this.validCode){
+        this.showInputError({title: "Invalid Code!", message: "Room codes must contain only chanracters in the alphabet or digits."})
+        this.code = oldInput
+      }
+
+    },
+    validateName(newInput, oldInput){
+      var regex2 = new RegExp('[^0-9a-zA-Z\\s_]', 'g')
+      this.validName = (!regex2.test(newInput))
+      
+      if(!this.validName){
+        this.showInputError({title: "Invalid Username!", message: "Usernames must contain only chanracters in the alphabet or digits."})
+        this.username = oldInput
+      }
+
     },
     view(event){
       let self = this;
@@ -267,6 +290,19 @@ notifications: {
         title: 'Username Taken',
         message: 'That username is already taken!',
         type: 'error' 
+      },
+      showInputError: {
+        title: 'Invalid Input',
+        message: 'must contain valid characters!',
+        type: 'error' 
+      }
+    },
+    watch: {
+      code: function (newCode, oldCode) {
+        this.validateCode(newCode, oldCode)
+      },
+      username: function (newName, oldName) {
+        this.validateName(newName, oldName)
       }
     }
   
